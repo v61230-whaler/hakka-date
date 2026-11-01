@@ -35,9 +35,11 @@
   }
   .play:hover { filter:brightness(1.1); }
   .play.playing { background:#e67e22; }
-  .question { display:flex; align-items:center; gap:12px; flex-wrap:wrap; font-size:clamp(1.3rem,3.5vw,1.9rem); font-weight:bold; color:var(--main); margin-bottom:14px; }
+  .question { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; font-size:clamp(1.3rem,3.5vw,1.9rem); font-weight:bold; color:var(--main); margin-bottom:14px; }
   .question .play { font-size:.9rem; padding:4px 14px; background:#fff; color:var(--main); border:2px solid var(--main); }
   .question .play.playing { background:#e67e22; border-color:#e67e22; color:#fff; }
+  .line { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .side { display:flex; align-items:center; gap:10px; margin-left:auto; flex-wrap:wrap; justify-content:flex-end; }
   .hint { font-size:.95rem; color:#95a5a6; margin-top:14px; }
   .head-right { display:flex; align-items:center; gap:10px; margin-left:auto; flex-wrap:wrap; justify-content:flex-end; }
   .note { font-size:1rem; font-weight:bold; color:#c0392b; background:#fdecea; border:2px solid #c0392b; border-radius:999px; padding:6px 14px; }
@@ -64,40 +66,37 @@
 <div class="container">
 
   <section class="card" data-card="date">
-    <div class="card-head">
-      <div class="card-title">句型練習(日期)</div>
-      <div class="head-right">
+    <div class="question"><span>問：今晡日係拜幾？</span><button class="play" data-q="date">🔊 聽問句</button></div>
+    <div class="line">
+      <div class="sentence" id="s-date"></div>
+      <div class="side">
         <span class="note" id="n-date" role="status"></span>
         <button class="play" data-replay="date">🔊 唸一擺</button>
       </div>
     </div>
-    <div class="question"><span>問：今晡日係拜幾？</span><button class="play" data-q="date">🔊 聽問句</button></div>
-    <div class="sentence" id="s-date"></div>
     <div class="hint">* 點黑色框框選主詞和星期,選好就會唸出來。</div>
   </section>
 
   <section class="card" data-card="weather">
-    <div class="card-head">
-      <div class="card-title">句型練習(天氣)</div>
-      <div class="head-right">
+    <div class="question"><span>問：今晡日天時仰般？</span><button class="play" data-q="weather">🔊 聽問句</button></div>
+    <div class="line">
+      <div class="sentence" id="s-weather"></div>
+      <div class="side">
         <span class="note" id="n-weather" role="status"></span>
         <button class="play" data-replay="weather">🔊 唸一擺</button>
       </div>
     </div>
-    <div class="question"><span>問：今晡日天時仰般？</span><button class="play" data-q="weather">🔊 聽問句</button></div>
-    <div class="sentence" id="s-weather"></div>
     <div class="hint">* 點黑色框框選天氣,選好就會唸出來。</div>
   </section>
 
   <section class="card" data-card="time">
-    <div class="card-head">
-      <div class="card-title">句型練習(時間)</div>
-      <div class="head-right">
+    <div class="question"><span>問：這下幾多點？</span></div>
+    <div class="line">
+      <div class="sentence" id="s-time"></div>
+      <div class="side">
         <span class="note" id="n-time" role="status"></span>
       </div>
     </div>
-    <div class="question"><span>問：這下幾多點？</span></div>
-    <div class="sentence" id="s-time"></div>
     <div class="hint">* 點黑色框框選小時(1–12)和分鐘(00–59)。</div>
   </section>
 
